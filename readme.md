@@ -1,6 +1,8 @@
+<pre>
 vue / react 모두 npm install 하세요   
 실행시 react 는 npm start / vue 는 npm run serve 입니다.   
-테스트 계정은 test/1234 입니다.
+테스트 계정은 test/1234 입니다.   
+</pre>
 CEKeitor에 대하여
 =============
 <pre>
