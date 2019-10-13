@@ -10,7 +10,28 @@ class mainPage extends Component {
         this.state = {
             getData:'nodata',
             postData:'nodata',
+            keyData: ''
         }
+    }
+
+    /**
+     * 키이벤트를 받는 함수
+     */
+    keyevent = (evt) => {
+        // 코드값
+        console.info('event code : ', evt.keyCode);
+        // 입력값
+        console.info('event code : ', evt.key);
+
+        // 활용예 입력받은 값을 하단 span 태그에 출력
+        // 수정할 부분으로는 삭제버튼(del / 뒤로가기) 선택 시 삭제 코드 필요
+        // 값이 없을 경우는 빈값으로 처리.
+        // 위 두가지 숙제!!
+        this.keyData += evt.key;
+        this.setState({
+            keyData: this.keyData
+        })
+        
     }
     
 
@@ -50,8 +71,23 @@ class mainPage extends Component {
                             <img src="./node.png"/>
                         </div>
                         
+                        
                     </Slider>
                 </div>
+                {
+                    /* 여기부터 키보드 입력 받기 시작 */
+                }
+                <input type="text" onKeyUp={this.keyevent} />
+                {
+                    /* 여기부터 키보드 입력 받기 끝 */
+                }
+                {
+                    /* 여기부터 키보드 입력 받은 정보 출력 시작 */
+                }
+                <span>{this.keyData}</span>
+                {
+                    /* 여기부터 키보드 입력 받은 정보 출력 끝 */
+                }
                 {/* <div className="App">
                     <h1>React Sample!!</h1>
                     <br/>
